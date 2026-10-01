@@ -1,18 +1,18 @@
-# Episode Club
+# Serializd-inspired TV diary
 
-A small show diary built around the thing TV tracking deserves: rating episodes one by one.
+An unofficial, browser-based TV tracking and community app inspired by the features of Serializd. This project is not affiliated with Serializd.
 
 ## Run it
 
-Open `index.html` in a browser. No build step or package install is needed. Episode ratings, notes, watch dates, watchlist choices, and queue progress are saved in that browser with `localStorage`.
+Open `index.html` in a browser. There is no build step or package install. Tracking, ratings, likes, follows, and lists are saved locally in the browser with `localStorage`.
 
-## What works
+## Included
 
-- Browse and search a starter catalogue of shows.
-- Open a show, move between seasons, and see every episode.
-- Rate an episode from one to five stars and save an optional diary note and watch date.
-- Edit a rating by selecting it again in the episode list.
-- See your episode logs, ratings, and notes in the journal.
-- Keep a watchlist and automatically advance your queue to the next unlogged episode.
+- Home activity feed and community reviews
+- Show discovery, search, sorting, and show detail pages
+- Show tracking states: watching, watched, paused, and dropped
+- Season and episode lists with episode ratings and diary reviews
+- Series ratings, watchlist, review likes, and profile statistics
+- Community lists and personal list creation
 
-This first version keeps your data on your device. Sign-in, syncing between devices, community activity, and a live TV catalogue can be added later.
+This first version is a front-end recreation. It uses a small built-in catalogue and local browser storage; it does not have user accounts, shared data, or a live TV metadata service yet.
