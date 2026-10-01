@@ -4,8 +4,8 @@ An unofficial, browser-based TV tracking and community app inspired by the featu
 
 ## Run it with live TV data
 
-1. Create a TMDB account and request an **API Read Access Token** in the API settings.
-2. Copy `.env.example` to `.env` and paste the token as `TMDB_ACCESS_TOKEN`.
+1. Create a TMDB account and copy either the **API Read Access Token** or the **API Key** from its API settings.
+2. Copy `.env.example` to `.env` and fill in either `TMDB_ACCESS_TOKEN` or `TMDB_API_KEY`.
 3. Run `npm start` with Node.js 18 or newer, then open `http://localhost:3000`.
 
 The small Node server serves the app and proxies the allowed TMDB requests. The token stays on the server and `.env` is ignored by Git. For a Vercel deployment, set `TMDB_ACCESS_TOKEN` as a project environment variable; `api/tmdb.js` provides the serverless proxy. A static GitHub Pages deployment cannot run that private API proxy.
