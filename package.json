@@ -1,0 +1,12 @@
+{
+  "name": "serializd-inspired-tv-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An unofficial TV tracking and community app with TMDB metadata.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
