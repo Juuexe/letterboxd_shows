@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11120f" />
+    <meta name="description" content="Keep track of every episode you watch." />
+    <title>Episode Club — Keep your TV diary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#discover" aria-label="Episode Club home">episode<span>club</span><i>®</i></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#discover" data-page="discover" class="active">Discover</a>
+        <a href="#journal" data-page="journal">Journal</a>
+        <a href="#watchlist" data-page="watchlist">Watchlist</a>
+      </nav>
+      <label class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a show" autocomplete="off" /></label>
+      <button class="profile-button" id="profile-button" aria-label="Your profile">A</button>
+    </header>
+
+    <main class="page-shell">
+      <section class="welcome-row" aria-labelledby="welcome-title">
+        <div>
+          <p class="eyebrow">A diary for the shows you love</p>
+          <h1 id="welcome-title">One episode at a time.</h1>
+          <p class="welcome-copy">Keep your place, rate every episode, and remember what you thought.</p>
+        </div>
+        <div class="year-summary" id="year-summary" aria-live="polite"></div>
+      </section>
+
+      <div class="content-grid">
+        <section class="main-content" id="main-content" aria-live="polite"></section>
+        <aside class="sidebar">
+          <section class="side-card queue-card">
+            <div class="side-heading"><h2>Pick up where you left off</h2><span>YOUR QUEUE</span></div>
+            <div id="queue-content"></div>
+          </section>
+          <section class="side-card recent-card">
+            <div class="side-heading"><h2>Recently logged</h2><a href="#journal" class="small-link">JOURNAL ↗</a></div>
+            <div id="recent-content"></div>
+          </section>
+          <p class="sidebar-note">A little corner of the internet for keeping up with television.</p>
+        </aside>
+      </div>
+      <footer><span>EPISODE CLUB</span><span>Made for people who love the next episode.</span></footer>
+    </main>
+
+    <dialog id="log-dialog" class="log-dialog">
+      <form method="dialog" id="log-form">
+        <div class="dialog-top"><div><p class="eyebrow">Your TV diary</p><h2 id="dialog-title">Log an episode</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div>
+        <p class="dialog-subtitle" id="dialog-subtitle"></p>
+        <input type="hidden" id="log-show-id" />
+        <input type="hidden" id="log-episode-id" />
+        <fieldset class="rating-field"><legend>Your rating</legend><div class="star-picker" id="star-picker" role="radiogroup" aria-label="Rate this episode"></div><p class="rating-hint" id="rating-hint">Choose a rating</p></fieldset>
+        <label class="note-label" for="log-note">A note <span>OPTIONAL</span></label>
+        <textarea id="log-note" maxlength="500" placeholder="A moment, a thought, a feeling…"></textarea>
+        <label class="date-label" for="log-date">Watched on</label>
+        <input id="log-date" type="date" />
+        <div class="dialog-actions"><button class="button button-quiet" value="cancel">Cancel</button><button class="button button-primary" id="save-log" value="default" disabled>Save to journal</button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
